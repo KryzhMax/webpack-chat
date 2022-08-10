@@ -36,6 +36,7 @@ export const toAuthenticate = () => {
       const credential = GoogleAuthProvider.credentialFromError(error);
       // ...
     });
+    
 };
 
 onAuthStateChanged(auth, (user) => {
@@ -52,6 +53,7 @@ onAuthStateChanged(auth, (user) => {
 });
 
 export function signOutUser() {
+  console.log(1111);
   signOut(auth)
     .then(() => {
       // Sign-out successful.

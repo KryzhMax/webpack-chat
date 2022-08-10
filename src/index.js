@@ -3,18 +3,18 @@ import "./style.css";
 import { btnRef, chatContainer } from "./refs";
 import { toAuthenticate, signOutUser } from "./service/firebase";
 
-console.log("11111 :>> ", 11111);
+// console.log("11111 :>> ", 11111);
 
 function toLogIn(evt) {
   let id = evt.target.dataset.id;
   console.log(id);
   if (id === "Sign in") {
-    signIn();
+    toAuthenticate();
   } else {
     signOutUser();
   }
 }
-
+console.log(btnRef);
 export function toggleContent(user) {
   let statusUser = "Sign in";
   if (user) {
@@ -22,6 +22,7 @@ export function toggleContent(user) {
   }
   btnRef.textContent = statusUser;
   btnRef.dataset.id = statusUser;
+  console.log(toggleContent);
 }
 
-btnRef.addEventListener("click", toAuthenticate);
+btnRef.addEventListener("click", toLogIn);
